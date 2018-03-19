@@ -3,19 +3,6 @@
 <html>
 	<head>
 
-
-<script>
-    if (navigator.serviceWorker.controller) {
-        console.log('[PWA Builder] active service worker found, no need to register')
-    } else {
-        //Register the ServiceWorker
-        navigator.serviceWorker.register('pwabuilder-sw.js', {
-            scope: './'
-        }).then(function(reg) {
-            console.log('Service worker has been registered for scope:'+ reg.scope);
-        });
-    }
-</script>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="generator" content="Jekyll v{{ jekyll.version }}">
@@ -27,7 +14,7 @@
 		<link rel="shortcut icon" type="image/png" sizes="128x128" href="/favicon-128x128.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/manifest.json">
+
 		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#407afc">
 		<meta name="theme-color" content="#407afc">
 
