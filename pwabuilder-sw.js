@@ -12,6 +12,21 @@ self.addEventListener('install', function(event) {
   }));
 });
 
+
+// DEL REFRESHO : 
+var refreshing;
+navigator.serviceWorker.addEventListener('controllerchange',
+  function() {
+    if (refreshing) return;
+    refreshing = true;
+    window.location.reload();
+  }
+);
+navigator.serviceWorker.waiting().then(function (reg) {
+  if (confirm('Refresh now?')) reg.waiting.skipWaiting();
+});
+
+
 //If any fetch fails, it will look for the request in the cache and serve it from there first
 self.addEventListener('fetch', function(event) {
   var updateCache = function(request){
